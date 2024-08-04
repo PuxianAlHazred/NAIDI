@@ -70,7 +70,10 @@
 </script>
 
 <template>
-    <section id="loading" class="overflow-hidden bg-stone-100 opacity-1 z-[50] fixed top-0  w-screen h-screen">
+    <section id="loading" class="overflow-hidden  opacity-1 z-[50] fixed top-0  w-screen h-screen">
+        <div class="absolute w-full h-screen z-[0]">
+            <NuxtImg src="intro.png" class="gsap-img opacity-0 mx-auto noise -mt-[0vh] -ml-[15vw]" height="1800" width="1440" loading="lazy" />
+        </div>
         <div class="gsap-loading w-full h-screen bg-stone-100 border-white border-[100px] p-[100px] grid grid-cols-12 items-center z-[10]" >
             <span class="opacity-0 gsap-opacity col-span-3 font-nunito text-left flex flex-col mt-[100%] overflow-y-hidden"><b>LOADING</b> 0%</span>
             <div class="gsap-border bg-transparent col-span-6 border-0 border-stone-300 py-20  flex flex-col"  @click="animetest()" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" style="transform-style: preserve-3d; transform: perspective(1000px);">
@@ -79,8 +82,6 @@
             </div>
             <span class="opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
         </div>
-        <div class="absolute w-full h-screen z-[-1]">
-            <NuxtImg src="intro.png" class="gsap-img opacity-0 mx-auto noise -mt-[100vh] -ml-[15vw]" height="1800" width="1440" loading="lazy" />
-        </div>
+
     </section>
 </template>
