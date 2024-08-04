@@ -161,7 +161,7 @@
             <span class="opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
         </div>
     </section>
-    <NuxtPage v-if="loadings === false" />
+    <NuxtPage />
 
     <div class="pixelateMin fixed top-0 z-[-1]">
       <div class="animate-landing-grid h-screen w-screen  opacity-[0.2]"></div>
