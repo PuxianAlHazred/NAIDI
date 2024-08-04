@@ -1,14 +1,12 @@
 
 <template>
     <section>
-        <Intro />
-        <section>
-            <uiHeader class="sticky top-0 bg-background/75 backdrop-blur "/>
+            <uiHeader />
+            <Intro />
             <Aboutus />
             <Works />
             <Health />
             <Atelier />
-        </section>
-        <uiFooter />
+            <uiFooter />
     </section>
 </template>

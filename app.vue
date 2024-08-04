@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { _backgroundColor, type _borderWidth } from '#tailwind-config/theme';
+  const loadings = ref(true)
   const colorMode = useColorMode()
   const { $gsap } = useNuxtApp()
   const color = computed(() => colorMode.value === 'dark' ? '#000000' : 'white')
@@ -17,7 +19,7 @@
     }
   })
   const title = 'Naïdi.tattoo'
-  const description = 'Tatoueuse sur Toulouse'
+  const description = "Tatoueuse sur Toulouse et passionnée par l'art du tatouage depuis des années, je mets mon expertise et ma créativité au service de vos envies !"
 
   useSeoMeta({
     title,
@@ -29,44 +31,107 @@
     twitterCard: 'summary_large_image'
   })
   
+  function animetest() {
+      $gsap.to('.gsap-loading', { 
+          height: 0, 
+          padding: 0,
+          duration: 1,
+          delay: 3   
+      })
+      $gsap.to('#loading', { 
+          height: 0, 
+          duration: 2,
+          delay: 1,
+          y: -400
+      })
+      $gsap.to('.gsap-blur', { 
+          'webkitFilter': 'blur(300px)',
+          duration: 3,     
+      })
+      $gsap.to('.gsap-border', { 
+          duration: 1,  
+          borderWidth: 0,  
+          delay: 1  
+      })
+      $gsap.to('.gsap-opacity', { 
+          duration: 1,  
+          opacity: 1,  
+          marginTop: "100%",
+          delay: 2  
+      })
+      $gsap.to('.gsap-img', { 
+          duration: 1,  
+          opacity: 0,  
+          delay: 1  
+      })
+      setTimeout(() => {
+          loadings.value = false
+      }, 600);  
+  }
+
   onMounted(() => { 
-    $gsap.set(".ball", {xPercent: -50, yPercent: -50})
-    const ball = document.querySelector(".ball")
-    const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-    const mouse = { x: pos.x, y: pos.y }
-    const speed = 0.15
-    const xSet = $gsap.quickSetter(ball, "x", "px")
-    const ySet = $gsap.quickSetter(ball, "y", "px")
-    window.addEventListener("mousemove", e => {    
-      mouse.x = e.x
-      mouse.y = e.y
+    $gsap.to('.gsap-loading', { 
+        borderWidth: 0, 
+        duration: 3,
     })
-    $gsap.ticker.add(() => {
-      const dt = 1.0 - Math.pow(1.0 - speed, $gsap.ticker.deltaRatio()); 
-      pos.x += (mouse.x - pos.x) * dt
-      pos.y += (mouse.y - pos.y) * dt
-      xSet(pos.x)
-      ySet(pos.y)
+    $gsap.to('.gsap-blur', { 
+        'webkitFilter': 'blur(0px)',
+        duration: 3,     
+    })
+    $gsap.to('.gsap-border', { 
+        duration: 1,  
+        borderWidth: 4,  
+        delay: 3  
+    })
+    $gsap.to('.gsap-opacity', { 
+        duration: 1,  
+        opacity: 1,  
+        marginTop: "0%",
+        delay: 3  
+    })
+    $gsap.to('.gsap-img', { 
+        duration: 1,  
+        opacity: 1,  
+        delay: 2  
     })
 
+    $gsap.set(".ball", {xPercent: -50, yPercent: -50})
+      const ball = document.querySelector(".ball")
+      const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+      const mouse = { x: pos.x, y: pos.y }
+      const speed = 0.15
+      const xSet = $gsap.quickSetter(ball, "x", "px")
+      const ySet = $gsap.quickSetter(ball, "y", "px")
+      window.addEventListener("mousemove", e => {    
+        mouse.x = e.x
+        mouse.y = e.y
+      })
+      $gsap.ticker.add(() => {
+        const dt = 1.0 - Math.pow(1.0 - speed, $gsap.ticker.deltaRatio()); 
+        pos.x += (mouse.x - pos.x) * dt
+        pos.y += (mouse.y - pos.y) * dt
+        xSet(pos.x)
+        ySet(pos.y)
+      })
+
     $gsap.set(".cursor", {xPercent: -50, yPercent: -50})
-    const ball2 = document.querySelector(".cursor")
-    const pos2 = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-    const mouse2 = { x: pos.x, y: pos.y }
-    const speed2 = 0.35
-    const xSet2 = $gsap.quickSetter(ball2, "x", "px")
-    const ySet2 = $gsap.quickSetter(ball2, "y", "px")
-    window.addEventListener("mousemove", e => {    
-      mouse2.x = e.x
-      mouse2.y = e.y
-    })
-    $gsap.ticker.add(() => {
-      const dt2 = 1.0 - Math.pow(1.0 - speed2, $gsap.ticker.deltaRatio()); 
-      pos2.x += (mouse2.x - pos2.x) * dt2
-      pos2.y += (mouse2.y - pos2.y) * dt2
-      xSet2(pos2.x)
-      ySet2(pos2.y)
-    })
+      const ball2 = document.querySelector(".cursor")
+      const pos2 = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+      const mouse2 = { x: pos.x, y: pos.y }
+      const speed2 = 0.35
+      const xSet2 = $gsap.quickSetter(ball2, "x", "px")
+      const ySet2 = $gsap.quickSetter(ball2, "y", "px")
+      window.addEventListener("mousemove", e => {    
+        mouse2.x = e.x
+        mouse2.y = e.y
+      })
+      $gsap.ticker.add(() => {
+        const dt2 = 1.0 - Math.pow(1.0 - speed2, $gsap.ticker.deltaRatio()); 
+        pos2.x += (mouse2.x - pos2.x) * dt2
+        pos2.y += (mouse2.y - pos2.y) * dt2
+        xSet2(pos2.x)
+        ySet2(pos2.y)
+      })
   })
 </script>
 
@@ -83,10 +148,24 @@
       </svg> 
     </div>
     
-    <Loading />
+    <section id="loading" class="overflow-hidden opacity-1 z-[50] fixed top-0  w-screen h-screen">
+        <div class="absolute w-full h-screen z-[0]">
+            <NuxtImg src="intro.png" class="gsap-img opacity-0 mx-auto noise -mt-[0vh] -ml-[15vw]" height="1800" width="1440" loading="lazy" />
+        </div>
+        <div class="gsap-loading w-full h-screen bg-transparent border-white border-[100px] p-[100px] grid grid-cols-12 items-center z-[10]" >
+            <span class="opacity-0 gsap-opacity col-span-3 font-nunito text-left flex flex-col mt-[100%] overflow-y-hidden"><b>LOADING</b> 0%</span>
+            <div class="gsap-border bg-transparent col-span-6 border-0 border-stone-300 py-20  flex flex-col"  @click="animetest()" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" style="transform-style: preserve-3d; transform: perspective(1000px);">
+                <h1 class="gsap-blur blur font-antonsc text-[16vw] text-center text-black z-40]" style="transform: translateZ(200px)">NAÏDI</h1>
+                <span class="opacity-0 gsap-opacity mx-auto w-[600px] text-right text-sm font-nunito uppercase underline -mt-0 z-[50]">Enter sur le site</span>
+            </div>
+            <span class="opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
+        </div>
+    </section>
+    <NuxtPage v-if="loadings === false" />
 
-    <NuxtPage />
-
+    <div class="pixelateMin fixed top-0 z-[-1]">
+      <div class="animate-landing-grid h-screen w-screen  opacity-[0.2]"></div>
+    </div>
     <svg class="svg-filter">
       <defs>
         <filter id="pixelateMin"
@@ -191,5 +270,31 @@
   font-weight: 400;
   font-style: normal;
 }
-
+.landing-grid {
+  background-size: 3.33px 3.33px;
+  background-image:
+    linear-gradient(to right, rgb(0, 0, 0) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent 1px);
+}
+.animate-landing-grid {
+  animation: bouncing-grid 2s infinite;
+  background-size: 3.33px 3.33px;
+  background-image:
+    linear-gradient(to right, rgb(75, 75, 75) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(75, 75, 75) 1px, transparent 1px);
+}
+@keyframes bouncing-grid {
+  0% {
+    background-size: 3px 3px;
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  }
+  50% {
+    background-size: 3.33px 3.33px;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  100% {
+    background-size: 3px 3px;
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  }
+}
 </style>
