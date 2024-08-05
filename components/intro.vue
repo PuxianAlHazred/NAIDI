@@ -61,7 +61,7 @@
 <template>
     <header id="intro" class="h-screen w-full bg-transparent">
         <div id="introContent" class="grid grid-cols-12 p-20 h-full z-[10]">
-            <div class="colTitre col-span-2 flex flex-col justify-end text-teal-700">
+            <div class="colTitre col-span-2 flex flex-col justify-end text-white">
                 <h1 class="absolute font-antonsc text-[16vw] leading-[15vw] text-center pixelateMin">NAÏDI</h1>
             </div>
             <div class="colCTA col-span-8 flex flex-col justify-center -mt-40 -mr-20">
@@ -79,13 +79,13 @@
                         <a class="hover:underline hover:font-bold" @click="scrollTo('#health')">Les Soins</a>
                         <a class="hover:underline hover:font-bold" @click="scrollTo('#contact')">Contact</a>
                     </nav>
-                    <NuxtImg src="logo-black.png" loading="lazy" width="50px" height="130px" />
+                    <NuxtImg src="logo-black.png"  width="50px" height="130px" />
                 </div>
                 <span class="col-span-1 font-nunito text-right flex flex-col uppercase"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
             </div>
         </div>
         <div class="colImage absolute w-full h-screen z-[5]">
-            <NuxtImg src="test-1.png" class="ml-auto noise -mt-[100vh] mr-40" height="800" loading="lazy" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
+            <NuxtImg src="test-1.png" class="ml-auto noise -mt-[100vh] mr-40" height="800" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
         </div>
     </header>
 </template>

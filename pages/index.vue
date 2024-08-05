@@ -1,6 +1,6 @@
 
 <template>
-    <section>
+    <section class="cursor-crosshair	">
             <uiHeader />
             <Intro />
             <Aboutus />
