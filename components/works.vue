@@ -106,10 +106,10 @@
                 <div class="col-span-2 saturate-0 mix-blend-darken hover:saturate-100 hover:mix-blend-normal duration-500">
                     <NuxtImg src="img/453002763_18099367093428157_1681512558541762286_n.jpg" class="WorksImg mx-auto w-full"  />
                 </div>
-                <div class="saturate-0 mix-blend-darken  col-span-2 mt-60">
+                <div class="saturate-0 mix-blend-darken hover:saturate-100 hover:mix-blend-normal col-span-2 mt-60">
                     <NuxtImg src="img/452941299_18099278131428157_2869167391769077256_n.jpg" class="WorksImg mx-auto w-full"  />
                 </div>
-                <div class="saturate-0 mix-blend-darken  col-span-2 col-start-6 mt-80">
+                <div class="saturate-0 mix-blend-darken hover:saturate-100 hover:mix-blend-normal col-span-2 col-start-6 mt-80">
                     <NuxtImg src="img/452414292_18098980507428157_3786217696202268850_n.jpg" class="WorksImg mx-auto w-full"  />
                 </div>
                 <div class="col-span-5 col-start-8 -mt-20">
