@@ -139,13 +139,15 @@
                                 Atelier
                             </NuxtLink>
                         </nav>
-                        <NuxtImg src="logo-black.png"  width="50px" height="130px" v-if="$colorMode.value === 'white'" />
-                        <NuxtImg src="logo-white.png"  width="50px" height="130px" v-if="$colorMode.value === 'dark'" />
+                        <div>
+                            <NuxtImg src="logo-black.png"  width="50px" height="130px" v-if="$colorMode.value === 'white'" />
+                            <NuxtImg src="logo-white.png"  width="50px" height="130px" v-if="$colorMode.value === 'dark'" />
+                        </div>
                     </div>
                     <span class="col-span-1 font-nunito text-right flex flex-col uppercase"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
                 </div>
             </div>
-            <div class="colImage absolute w-full h-screen z-[5]">
+            <div class="colImage absolute w-full h-screen z-[5] dark:invert">
                 <NuxtImg src="test-1.png" class="ml-auto noise -mt-[100vh] mr-40" height="800" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
             </div>
         </header>

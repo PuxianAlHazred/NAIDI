@@ -149,7 +149,7 @@
         class="overflow-hidden opacity-1 z-[50]"
       >
           <div 
-            class="absolute w-full h-screen z-[0]"
+            class="absolute w-full h-screen z-[0] dark:invert"
           >
               <NuxtImg 
                 src="intro.png" 

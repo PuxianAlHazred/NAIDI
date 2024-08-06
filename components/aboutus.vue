@@ -83,7 +83,7 @@
                 <div class="col-span-11 h-1 bg-black pixelateMin dark:bg-white " />
             </div>
             <div class="colPhoto grid grid-cols-12 p-40 z-[5] mt-40">
-                <div class="colPhotoC absolute w-full h-full col-span-12">
+                <div class="colPhotoC absolute w-full h-full col-span-12  dark:invert ">
                     <NuxtImg src="test-3.png" class="mx-auto -mt-20 w-full noise" height="2000" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
                 </div>
                 <NuxtImg src="naidi-photo-1.jpg" class="mx-auto hover:noise col-span-6 col-start-4" height="516"  data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="absolute w-full z-[0]">
+        <div class="absolute w-full z-[0] dark:invert ">
             <NuxtImg src="test-2.png" class="mr-auto noise -mt-[100vh] ml-40" height="800" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
         </div>
     </section>
