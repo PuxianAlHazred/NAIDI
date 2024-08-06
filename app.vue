@@ -136,165 +136,170 @@
 </script>
 
 <template>
-  <div id="naidiAPP">
-    <NuxtRouteAnnouncer />
+    <div id="naidiAPP" class="select-none ">
+      <NuxtRouteAnnouncer>
+        <template #default="{ message }">
+          <p>{{ message }} was loaded.</p>
+        </template>
+      </NuxtRouteAnnouncer>
 
+      <NuxtLoadingIndicator :color="'black'" :height="100" :duration="10000" />
 
-    
-    <section 
-      id="loading" 
-      class="overflow-hidden opacity-1 z-[50]"
-    >
-        <div 
-          class="absolute w-full h-screen z-[0]"
-        >
-            <NuxtImg 
-              src="intro.png" 
-              class="gsap-img opacity-0 mx-auto noise -mt-[0vh] -ml-[15vw]" 
-              height="1800" 
-              width="1440"  
-            />
-        </div>
-        <div 
-          class="gsap-loading w-full h-screen bg-transparent border-white border-[100px] p-[100px] grid grid-cols-12 items-center z-[10]  select-none" 
-        >
-            <span 
-              class="opacity-0 gsap-opacity col-span-3 font-nunito text-left flex flex-col mt-[100%] overflow-y-hidden"
-            >
-              <b>LOADING</b> 
-              100%
-            </span>
-            <div 
-              class="gsap-border bg-white col-span-6 border-0 border-stone-300 py-20  flex flex-col" 
-              data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" 
-              style="transform-style: preserve-3d; transform: perspective(1000px);"
-            >
-                <h1 
-                class="gsap-blur blur-[500px] font-antonsc text-[16vw] text-center text-black z-40]" 
-                style="transform: translateZ(200px)"
-              >
-                NAÏDI
-              </h1>
-                <span 
-                  class="opacity-0 gsap-opacity mx-auto w-[600px] text-right text-sm font-nunito uppercase -mt-0 z-[50]"
-                  style="transform: translateZ(150px)"
-                >
-                  Bienvenue sur mon site
-                </span>
-            </div>
-            <span 
-              class="opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase"
-            >
-              <b>TATTOO ARTISTE</b> basée sur Toulouse
-            </span>
-        </div>
-    </section>
-    <NuxtPage />
-    <section id="assets">
-      <div id="cursor" class="z-[-1] absolute">
-          <svg class="ball w-[100px] h-[100px] fixed top-0 left-0" height="100" width="100">
-            <circle class="noise" cx="50" cy="50" r="40" stroke="black" stroke-width="1" fill="transparent" />
-          </svg> 
-          <svg class="cursor w-[100px] h-[100px] fixed top-0 left-0" height="100" width="100">
-            <circle cx="50" cy="50" r="5" stroke="black" stroke-width="1" fill="transparent" />
-          </svg> 
-      </div>
-      <div class="pixelateMin fixed top-0 z-[-2]">
-        <div class="animate-landing-grid h-screen w-screen opacity-[0.2]">
-        </div>
-      </div>
-
-      <svg class="svg-filter">
-        <defs>
-          <filter id="pixelateMin"
-            x="-10%"
-            y="-10%"
-            width="120%"
-            height="120%"
-            filterUnits="objectBoundingBox"
+      <section id="loading" 
+        class="overflow-hidden opacity-1 z-[50]"
+      >
+          <div 
+            class="absolute w-full h-screen z-[0]"
           >
-            <feTurbulence
-              id="feTurbulenceMin"
-              type="fractalNoise"
-              baseFrequency="0.0006"
-              numOctaves="1"
-              seed="8"
-              stitchTiles="noStitch"
+              <NuxtImg 
+                src="intro.png" 
+                class="gsap-img opacity-0 mx-auto noise -mt-[0vh] -ml-[15vw]" 
+                height="1800" 
+                width="1440"  
+              />
+          </div>
+          <div 
+            class="gsap-loading w-full h-screen bg-transparent border-white dark:border-black border-[100px] p-[100px] grid grid-cols-12 items-center z-[10]  select-none" 
+          >
+              <span 
+                class="opacity-0 gsap-opacity col-span-3 font-nunito text-left flex flex-col mt-[100%] overflow-y-hidden text-black dark:text-white"
+              >
+                <b>LOADING</b> 
+                100%
+              </span>
+              <div 
+                class="gsap-border bg-white dark:bg-black col-span-6 border-0 border-stone-300 py-20 dark:border-white flex flex-col" 
+                data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" 
+                style="transform-style: preserve-3d; transform: perspective(1000px);"
+              >
+                  <h1 
+                  class="gsap-blur blur-[500px] font-antonsc text-[16vw] text-center text-black dark:text-white z-40]" 
+                  style="transform: translateZ(200px)"
+                >
+                  NAÏDI
+                </h1>
+                  <span 
+                    class="opacity-0 gsap-opacity mx-auto w-[600px] text-right text-sm font-nunito uppercase -mt-0 z-[50] text-black dark:text-white"
+                    style="transform: translateZ(150px)"
+                  >
+                    Bienvenue sur mon site
+                  </span>
+              </div>
+              <span 
+                class="opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase text-black dark:text-white"
+              >
+                <b>TATTOO ARTISTE</b> basée sur Toulouse
+              </span>
+          </div>
+      </section>
+
+      <NuxtPage />
+
+      <section id="assets">
+        <div id="cursor" class="z-[-1] absolute">
+            <svg class="ball w-[100px] h-[100px] fixed top-0 left-0 " height="100" width="100">
+              <circle class="noise" cx="50" cy="50" r="40" stroke="text-teal" stroke-width="1" fill="transparent" />
+            </svg> 
+            <svg class="cursor w-[100px] h-[100px] fixed top-0 left-0 " height="100" width="100">
+              <circle cx="50" cy="50" r="5" stroke="text-teal" stroke-width="1" fill="transparent" />
+            </svg> 
+        </div>
+        <div class="z-[-2] fixed top-0 bg-white dark:bg-black h-screen w-screen ">
+          <div class="bg-[url('/noise.gif')] h-full w-full opacity-1 opacity-[0.10] dark:opacity-[0.20]" />
+
+        </div>
+        <svg class="svg-filter bg-black">
+          <defs>
+            <filter id="pixelateMin"
               x="-10%"
               y="-10%"
               width="120%"
               height="120%"
-            />
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="fractalNoise"
-              scale="20"
-              xChannelSelector="R"
-              yChannelSelector="G"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
-              filterUnits="userSpaceOnUse"
-            />
-            <animate
-              xlink:href="#feTurbulenceMin"
-              attributeName="baseFrequency"
-              dur="10000s"
-              keyTimes="0;0.5;1"
-              values="10;5.1;10;"
-              repeatCount="indefinite"
-            />
-          </filter>
-          <filter id="noise">
-            <feOffset
-              in="SourceGraphic"
-              dx="-2"
-              dy="-2"
-              result="offset"
-            />
-            <feGaussianBlur
-              in="offset"
-              stdDeviation="0,01"
-              result="blur"
-            />
-            <feTurbulence
-              result="waves"
-              type="turbulence"
-              baseFrequency="0.735 0.771"
-              numOctaves="1"
-              seed="2"
-            />
-            <feDisplacementMap
-              in="blur"
-              in2="waves"
-              scale="10"
-              xChannelSelector="R"
-              yChannelSelector="B"
-              result="ripples"
-            />
-            <feComposite
-              in="waves"
-              in2="ripples"
-              operator="arithmetic"
-              k1="1"
-              k2="0"
-              k3="1"
-              k4="0"
-            />
-          </filter>
-        </defs>
-      </svg>
-    </section>
+              filterUnits="objectBoundingBox"
+            >
+              <feTurbulence
+                id="feTurbulenceMin"
+                type="fractalNoise"
+                baseFrequency="0.0006"
+                numOctaves="1"
+                seed="8"
+                stitchTiles="noStitch"
+                x="-10%"
+                y="-10%"
+                width="120%"
+                height="120%"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="fractalNoise"
+                scale="20"
+                xChannelSelector="R"
+                yChannelSelector="G"
+                x="0%"
+                y="0%"
+                width="100%"
+                height="100%"
+                filterUnits="userSpaceOnUse"
+              />
+              <animate
+                xlink:href="#feTurbulenceMin"
+                attributeName="baseFrequency"
+                dur="10000s"
+                keyTimes="0;0.5;1"
+                values="10;5.1;10;"
+                repeatCount="indefinite"
+              />
+            </filter>
+            <filter id="noise">
+              <feOffset
+                in="SourceGraphic"
+                dx="-2"
+                dy="-2"
+                result="offset"
+              />
+              <feGaussianBlur
+                in="offset"
+                stdDeviation="0,01"
+                result="blur"
+              />
+              <feTurbulence
+                result="waves"
+                type="turbulence"
+                baseFrequency="0.735 0.771"
+                numOctaves="1"
+                seed="2"
+              />
+              <feDisplacementMap
+                in="blur"
+                in2="waves"
+                scale="10"
+                xChannelSelector="R"
+                yChannelSelector="B"
+                result="ripples"
+              />
+              <feComposite
+                in="waves"
+                in2="ripples"
+                operator="arithmetic"
+                k1="1"
+                k2="0"
+                k3="1"
+                k4="0"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </section>
 
-  </div>
+    </div>
 </template>
 
 <style lang="postcss">
 .svg-filter{ @apply invisible w-0 h-0}
-.pixelateMin { @apply w-auto;filter:url(#pixelateMin);}
-.noise { @apply w-auto;filter:url(#noise);}
+.pixelateMin { @apply w-auto; filter:url(#pixelateMin);}
+.noise { @apply w-auto; filter:url(#noise);}
 
+.noised { @apply w-auto; filter:url(#noise);}
 .font-mrdafoe {
   font-family: "Mr Dafoe", cursive;
   font-weight: 400;
@@ -310,30 +315,48 @@
   font-weight: 400;
   font-style: normal;
 }
-.landing-grid {
+
+.light-mode .landing-grid {
   background-size: 3.33px 3.33px;
   background-image:
-    linear-gradient(to right, rgb(0, 0, 0) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent 1px);
+    linear-gradient(to right, rgb(75, 75, 75) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(75, 75, 75) 1px, transparent 1px);
 }
-.animate-landing-grid {
+.light-mode .animate-landing-grid {
   animation: bouncing-grid 2s infinite;
   background-size: 3.33px 3.33px;
   background-image:
     linear-gradient(to right, rgb(75, 75, 75) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(75, 75, 75) 1px, transparent 1px);
 }
+
+.dark-mode .landing-grid {
+  background-size: 3.33px 3.33px;
+  background-color: black;
+  background-image:
+    linear-gradient(to right, rgb(53, 53, 53) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(53, 53, 53) 1px, transparent 1px);
+}
+.dark-mode .animate-landing-grid {
+  animation: bouncing-grid 2s infinite;
+  background-color: black;
+  background-size: 3.33px 3.33px;
+  background-image:
+    linear-gradient(to right, rgb(53, 53, 53) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(53, 53, 53) 1px, transparent 1px);
+}
+
 @keyframes bouncing-grid {
   0% {
-    background-size: 3px 3px;
+    background-size: 3.30px 3.30px;
     animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
   }
   50% {
     background-size: 3.33px 3.33px;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
   }
   100% {
-    background-size: 3px 3px;
+    background-size: 3.30px 3.30px;
     animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
   }
 }

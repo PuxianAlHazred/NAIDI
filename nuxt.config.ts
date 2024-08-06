@@ -1,8 +1,16 @@
 import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   future: {
     typescriptBundlerResolution: false
+  },
+
+  router: {
+    options: {
+      hashMode: false,
+      scrollBehaviorType: 'smooth'
+    }
   },
 
   devtools: { enabled: true },
