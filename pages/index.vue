@@ -1,6 +1,6 @@
 
 <template>
-    <section class="cursor-crosshair	">
+    <section class="cursor-crosshair overflow-hidden">
             <Intro />
             <Aboutus />
             <Works />

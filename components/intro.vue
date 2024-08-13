@@ -1,17 +1,53 @@
 <script setup lang="ts">
-    import type { _backgroundColor } from '#tailwind-config/theme';
+    import type { _backgroundColor, _height } from '#tailwind-config/theme';
     import VanillaTilt from 'vanilla-tilt';
+
     const { $gsap, $scrollTo, $ScrollTrigger } = useNuxtApp()
     const colorMode = useColorMode()
+    const color = computed(() => colorMode.value === 'dark' ? '#000000' : 'white')
 
+    const { isMobile, isTablet, isDesktop, isSafari, isChrome } = useDevice()
     const test = ref('')
+    const menu = ref(false)
+    const optionIntro = {
+        scrub: 1,
+        trigger: "#intro",
+        start: "top",
+        endTrigger: "#introContent",
+        end: "bottom",
+        markers: false,
+    }
     function scrollTo(e: any) {
         $gsap.to(window, { duration: 2, scrollTo: e })
         test.value = e
     }
+    function menuSwitch() {
+        if(menu.value === true) {
+            $gsap.to("#navigation", { height: '100vh' })
+
+        } else {
+            $gsap.to("#navigation", { height: '5rem' })
+        }
+    }
     onMounted(() => { 
         $gsap.registerPlugin($scrollTo)
         $gsap.registerPlugin($ScrollTrigger)
+        
+        if(isDesktop) { 
+            console.log(isDesktop)
+            $gsap.to(".colImage", { scrollTrigger: optionIntro, opacity: 0 })
+            $gsap.to(".colTitre", { scrollTrigger: optionIntro, y: 50, color:"#000" })
+            $gsap.to(".colCTA", { scrollTrigger: optionIntro, y: 350 })
+            $gsap.to("#navigation", { scrollTrigger: optionIntro, opacity: 1 }) 
+        }
+        if(isTablet) {
+        }
+        if(isMobile) {
+            console.log(isMobile)
+
+            $gsap.to("#navigation", { scrollTrigger: optionIntro, opacity: 1 }) 
+        }
+
         if(colorMode.value === 'light') {
             $gsap.to("#intro", {
                 scrollTrigger: {
@@ -38,165 +74,189 @@
                 background: 'rgb(15 118 110)'
             })
         }
-
-        $gsap.to(".colImage", {
-            scrollTrigger: {
-                scrub: 1,
-                trigger: "#intro",
-                start: "top",
-                endTrigger: "#introContent",
-                end: "bottom",
-                markers: false,
-            },
-            opacity: 0,
-        })
-        $gsap.to(".colTitre", {
-            scrollTrigger: {
-                scrub: 1,
-                trigger: "#intro",
-                start: "top",
-                endTrigger: "#introContent",
-                end: "bottom",
-                markers: false,
-            },
-            y: 50,
-            color:"#000"
-        })
-        $gsap.to(".colCTA", {
-            scrollTrigger: {
-                scrub: 1,
-                trigger: "#intro",
-                start: "top",
-                endTrigger: "#introContent",
-                end: "bottom",
-                markers: false,
-            },
-            y: 350,
-        });
-        $gsap.to("#navigation", {
-            scrollTrigger: {
-                scrub: 0,
-                trigger: "#aboutus",
-                start: "top",
-                endTrigger: "#introContent",
-                end: "bottom+=300",
-                markers: false,
-            },
-            opacity: 1,
-        })
     })
 </script>
 
 <template>
     <section>
         <header id="intro" class="h-screen w-full bg-transparent">
-            <div id="introContent" class="grid grid-cols-12 p-20 h-full z-[10]">
-                <div class="colTitre col-span-2 flex flex-col justify-end text-white dark:text-black">
-                    <h1 class="absolute font-antonsc text-[16vw] leading-[15vw] text-center pixelateMin">NAÏDI</h1>
+            <div id="introContent" class="grid grid-cols-1 lg:grid-cols-12 lg:p-20 p-10 h-full z-[10]">
+                <div class="colTitre col-span-2 flex flex-col justify-center items-center lg:justify-end lg:text-white lg:dark:text-black text-black dark:text-white lg:py-0 py-40">
+                    <h1 class="absolute font-antonsc lg:text-[16vw] lg:leading-[15vw] text-center pixelateMin text-[43vw]">NAÏDI</h1>
                 </div>
-                <div class="colCTA col-span-8 flex flex-col justify-center -mt-40 -mr-20 text-black dark:text-white">
-                    <div class="flex flex-col p-20 pb-0 w-full font-nunito ">
-                        <p class="text-center uppercase">Passionnée par l'art du <b>tatouage</b> depuis des années,<br> je mets mon expertise et ma créativité<br> au service de vos envies !</p>
-                        <a class="mx-auto mt-6 border-4 border-stone-300  text-4xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe hover:bg-stone-300">Prendre contact</a>
+                <div class="colCTA col-span-8 flex flex-col justify-center lg:-mt-40 lg:-mr-20 text-black dark:text-white">
+                    <div class="flex flex-col lg:p-20 pb-0 w-full font-nunito ">
+                        <p class="lg:text-center text-justify uppercase">Passionnée par l'art du <b>tatouage</b> depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
+                        <a class="mx-auto mt-6 border-4 border-stone-300  text-4xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe hover:bg-stone-300 w-full text-center">Prendre contact</a>
                     </div>
                 </div>
                 <div class="col-span-2 flex flex-col justify-between z-[10] text-black dark:text-white">
-                    <div class="flex flex-col-2 justify-end items-start sticky top-20  mb-20">
+                    <div class="flex flex-col-2 lg:justify-end lg:items-start justify-center items-center sticky top-20 mb-0 lg:mb-20 lg:mt-0 mt-20">
                         <nav class="font-nunito text-right pr-3 flex flex-col uppercase h-[130px] justify-between">
                             <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
                                 :to="{ hash: '#intro'}" 
-                                class="hover:underline hover:font-bold uppercase" 
+                                class="lg:block hidden hover:underline hover:font-bold uppercase" 
                                 @click="scrollTo('#intro')"
                             >
                                 Accueil
                             </NuxtLink>
                             <NuxtLink :class="{ 'font-bold underline': test === '#aboutus' }" 
                                 :to="{ hash: '#aboutus'}"     
-                                class="hover:underline hover:font-bold uppercase" 
+                                class="lg:block hidden hover:underline hover:font-bold uppercase" 
                                 @click="scrollTo('#aboutus')"
                             >
                                 Qui suis-je ?
                             </NuxtLink>
                             <NuxtLink :class="{ 'font-bold underline': test === '#works' }" 
                                 :to="{ hash: '#works'}"     
-                                class="hover:underline hover:font-bold uppercase" 
+                                class="lg:block hidden hover:underline hover:font-bold uppercase" 
                                 @click="scrollTo('#works')"
                             >
                                 Portfolio
                             </NuxtLink>
                             <NuxtLink :class="{ 'font-bold underline': test === '#health' }" 
                                 :to="{ hash: '#health'}"         
-                                class="hover:underline hover:font-bold uppercase" 
+                                class="lg:block hidden hover:underline hover:font-bold uppercase" 
                                 @click="scrollTo('#health')"
                             >
                                 Les Soins
                             </NuxtLink>
                             <NuxtLink :class="{ 'font-bold underline': test === '#atelier' }" 
                                 :to="{ hash: '#atelier'}"         
-                                class="hover:underline hover:font-bold uppercase" 
+                                class="lg:block hidden hover:underline hover:font-bold uppercase" 
                                 @click="scrollTo('#atelier')"
                             >
                                 Atelier
                             </NuxtLink>
                         </nav>
                         <div>
-                            <NuxtImg src="logo-black.png"  width="50px" height="130px" v-if="$colorMode.value === 'white'" />
-                            <NuxtImg src="logo-white.png"  width="50px" height="130px" v-if="$colorMode.value === 'dark'" />
+                            <NuxtImg src="logo-black.png" width="50px" height="130px"  />
                         </div>
                     </div>
-                    <span class="col-span-1 font-nunito text-right flex flex-col uppercase"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
+                    <span class="col-span-1 font-nunito lg:text-right text-center flex flex-col uppercase lg:mb-0 mb-10"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
                 </div>
             </div>
-            <div class="colImage absolute w-full h-screen z-[5] dark:invert">
+            <div class="colImage absolute w-full h-screen z-[-1] dark:invert lg:opacity-100 opacity-0 lg:block hidden">
                 <NuxtImg src="test-1.png" class="ml-auto noise -mt-[100vh] mr-40" height="800" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
             </div>
         </header>
         <nav id="navigation" 
-            class="mix-blend-difference h-20 w-full border-b-2 border-white dark:border-black text-white flex justify-between font-nunito px-20 items-center text-sm z-[10] opacity-0 fixed top-0 bg-background/100 backdrop-blur "
+            class="lg:mix-blend-difference mix-blend-none h-20 w-screen border-b-2 border-black dark:border-black text-black  font-nunito lg:px-20 px-0  text-sm z-[50] opacity-1 lg:opacity-0 fixed top-0 bg-background/100 backdrop-blur flex flex-col"
+            :class="{ 'items-center justify-center': !menu, 'items-center pt-6': menu }"
         >
-            <h6 class="font-mrdafoe text-[3vw] text-left">
-                naïdi
-            </h6>
-            <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
-                :to="{ hash: '#intro'}" 
-                class="hover:underline hover:font-bold uppercase" 
-                @click="scrollTo('#intro')"
-            >
-                Accueil
-            </NuxtLink>
-            <NuxtLink :class="{ 'font-bold underline': test === '#aboutus' }" 
-                :to="{ hash: '#aboutus'}"     
-                class="hover:underline hover:font-bold uppercase" 
-                @click="scrollTo('#aboutus')"
-            >
-                Qui suis-je ?
-            </NuxtLink>
-            <NuxtLink :class="{ 'font-bold underline': test === '#works' }" 
-                :to="{ hash: '#works'}"     
-                class="hover:underline hover:font-bold uppercase" 
-                @click="scrollTo('#works')"
-            >
-                Portfolio
-            </NuxtLink>
-            <NuxtLink :class="{ 'font-bold underline': test === '#health' }" 
-                :to="{ hash: '#health'}"         
-                class="hover:underline hover:font-bold uppercase" 
-                @click="scrollTo('#health')"
-            >
-                Les Soins
-            </NuxtLink>
-            <NuxtLink :class="{ 'font-bold underline': test === '#atelier' }" 
-                :to="{ hash: '#atelier'}"         
-                class="hover:underline hover:font-bold uppercase" 
-                @click="scrollTo('#atelier')"
-            >
-                Atelier
-            </NuxtLink>
-            <a class="font-nunito font-bold text-sm" 
-                href="#"
-            >
-                CONTACT
-            </a>
+            <div class="lg:px-0 px-10 flex justify-between w-full" :class="{ 'items-center': !menu, 'items-end': menu }">
+                <h6 @click="scrollTo('#intro')" class="font-mrdafoe lg:text-[3vw] text-4xl text-left">
+                    naïdi
+                </h6>
+                <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
+                    :to="{ hash: '#intro'}" 
+                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
+                    @click="scrollTo('#intro')"
+                >
+                    Accueil
+                </NuxtLink>
+                <NuxtLink :class="{ 'font-bold underline': test === '#aboutus' }" 
+                    :to="{ hash: '#aboutus'}"     
+                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
+                    @click="scrollTo('#aboutus')"
+                >
+                    Qui suis-je ?
+                </NuxtLink>
+                <NuxtLink :class="{ 'font-bold underline': test === '#works' }" 
+                    :to="{ hash: '#works'}"     
+                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
+                    @click="scrollTo('#works')"
+                >
+                    Portfolio
+                </NuxtLink>
+                <NuxtLink :class="{ 'font-bold underline': test === '#health' }" 
+                    :to="{ hash: '#health'}"         
+                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
+                    @click="scrollTo('#health')"
+                >
+                    Les Soins
+                </NuxtLink>
+                <NuxtLink :class="{ 'font-bold underline': test === '#atelier' }" 
+                    :to="{ hash: '#atelier'}"         
+                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
+                    @click="scrollTo('#atelier')"
+                >
+                    Atelier
+                </NuxtLink>
+                <a class="lg:block hidden font-nunito font-bold text-sm" 
+                    href="#"
+                >
+                    CONTACT
+                </a>
+                <div @click="menu = !menu, menuSwitch()" class="">
+                    <svg v-if="!menu" width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden block ">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier"> 
+                            <path d="M5 8H13.75M5 12H19M10.25 16L19 16" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"></path> 
+                        </g>
+                    </svg>
+                    <svg v-if="menu" width="33px" height="33px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden block ">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier"> 
+                            <path d="M7 17L16.8995 7.10051" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"></path> 
+                            <path d="M7 7.00001L16.8995 16.8995" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"></path> 
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div v-if="menu" class="lg:px-0 px-10 flex lg:justify-end lg:items-start h-full justify-center items-center w-full">
+                <div class="flex flex-col-2 justify-center items-center bg-white/80 bg-backdrop border-stone3 border-4 py-10 px-3 w-full">
+                    <nav class="lg:text-sm text-lg font-nunito text-left pr-3 flex flex-col uppercase h-[200px] lg:h-[130px] justify-between">
+                        <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
+                            :to="{ hash: '#intro'}" 
+                            class="hover:underline hover:font-bold uppercase" 
+                            @click="scrollTo('#intro'), menuSwitch()"
+                        >
+                            Accueil
+                        </NuxtLink>
+                        <NuxtLink :class="{ 'font-bold underline': test === '#aboutus' }" 
+                            :to="{ hash: '#aboutus'}"     
+                            class="hover:underline hover:font-bold uppercase" 
+                            @click="scrollTo('#aboutus'), menuSwitch()"
+                        >
+                            Qui suis-je ?
+                        </NuxtLink>
+                        <NuxtLink :class="{ 'font-bold underline': test === '#works' }" 
+                            :to="{ hash: '#works'}"     
+                            class="hover:underline hover:font-bold uppercase" 
+                            @click="scrollTo('#works'), menuSwitch()"
+                        >
+                            Portfolio
+                        </NuxtLink>
+                        <NuxtLink :class="{ 'font-bold underline': test === '#health' }" 
+                            :to="{ hash: '#health'}"         
+                            class="hover:underline hover:font-bold uppercase" 
+                            @click="scrollTo('#health'), menuSwitch()"
+                        >
+                            Les Soins
+                        </NuxtLink>
+                        <NuxtLink :class="{ 'font-bold underline': test === '#atelier' }" 
+                            :to="{ hash: '#atelier'}"         
+                            class="hover:font-bold uppercase" 
+                            @click="scrollTo('#atelier'), menuSwitch()"
+                        >
+                            Atelier
+                        </NuxtLink>
+                    </nav>
+                    <div>
+                        <img src="/logo-black.png" class="noise h-[15Opx]"  />
+                    </div>
+                </div>
+            </div>
+            <div v-if="menu" class="bg-black p-10 col-span-8 flex flex-col justify-center lg:-mt-40 lg:-mr-20 text-black dark:text-white">
+                    <div class="flex flex-col lg:p-20 pb-0 w-full font-nunito ">
+                        <p class="lg:text-center text-white text-justify uppercase">Passionnée par l'art du <b>tatouage</b> depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
+                        <a class="mx-auto mt-6 border-4 border-stone-300  text-4xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe hover:bg-stone-300 w-full text-center text-white">Prendre contact</a>
+                    </div>
+            </div>
         </nav>
+
     </section>
 </template>
