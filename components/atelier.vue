@@ -46,6 +46,8 @@
             </div>
             <div class="grid grid-cols-1 gap-y-10 lg:pb-40 overflow-hidden">
                 <h3 class="colTitreAtelier font-antonsc">Atelier <span>privée</span></h3>
+                
+                <h3 class="colSTitreAtelier font-mrdafoe lg:hidden lg:mt-0 -mt-10">sur Toulouse</h3>
                 <div class="mx-auto lg:-mt-40 grid lg:grid-cols-3 grid-cols-1 lg:h-[80vh] justify-center items-center">
                     <div class="flex justify-start w-full lg:pl-20">
                         <Swiper
@@ -93,16 +95,22 @@
                             style="transform: translateZ(200px)"
                         />  
                     </div>
-                    <div class="lg:mt-0 mt-4 font-nunito text-justify text-black dark:text-white text-sm uppercase">
-                        <p>Je travaille dans un magnifique atelier privée et confortable proche de toulouse, je fais également des séjours invités dans des conventions.</p>
+                    <div class="lg:mt-0 mt-4 font-nunito text-justify text-black dark:text-white text-sm ">
+                        <p class="uppercase ont-bold ">Je travaille dans un magnifique atelier privée et confortable proche de toulouse, je fais également des séjours invités dans des conventions.</p>
                         <div class="flex justify-between py-10">
-                            <p class="font-bold underline">Adresse de l'atelier</p>
-                            <p class="font-bold underline">Prochaines conv.</p>
+                            <div class="flex flex-col text-left">
+                                <p class="font-bold underline uppercase">Adresse de l'atelier</p>
+                                <a class=" font-mrdafoe text-3xl text-teal-700">s'y rendre</a>
+                            </div>
+                            <div class="flex flex-col text-right ">
+                                <p class="font-bold underline uppercase">Prochaines conv.</p>
+                                <a class="font-mrdafoe text-3xl text-teal-700">en savoir plus</a>
+                            </div>
                         </div>
-                        <p>Découvrez l'intégralité de mon travail et restez informé(e) de mes actualités en me suivant sur Instagram.</p>
+                        <p class="uppercase lg:mb-0 mb-10">Découvrez l'intégralité de mon travail et restez informé(e) de mes actualités en me suivant sur Instagram.</p>
                     </div>
                 </div>
-                <h3 class="colSTitreAtelier font-mrdafoe ">sur Toulouse</h3>
+                <h3 class="colSTitreAtelier font-mrdafoe lg:block hidden">sur Toulouse</h3>
             </div>
         </div>
     </section>

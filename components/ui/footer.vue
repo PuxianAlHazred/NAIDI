@@ -1,7 +1,7 @@
 <template>
     <footer id="footer" class="bg-white dark:bg-black lg:h-screen h-full flex flex-col justify-end z-[10]">
         <div class="flex flex-col pb-10 w-screen font-nunito z-[10] px-10 lg:px-20 lg:pt-0 pt-20">
-            <p class="text-justify lg:text-center uppercase dark:text-white">Passionnée par l'art du tatouage depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
+            <p class="text-justify lg:text-center uppercase dark:text-white text-sm">Passionnée par l'art du tatouage depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
             <a class="lg:mx-auto mt-6 border-4 border-stone-300  text-4xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe text-center">Prendre contact</a>
         </div>
         <h6 class="font-antonsc lg:text-[16vw] text-5xl text-center text-black dark:text-white w-screen flex justify-between tracking-widest lg:px-20 lg:py-0 py-6 px-10">NAÏDI <span class="text-teal-700">TATTOO</span></h6>

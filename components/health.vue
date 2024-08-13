@@ -19,54 +19,54 @@
                         disableOnInteraction: true
                     }"
                 >
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100 lg:mx-10 lg:bg-white bg-stone-100 lg:ml-20 dark:bg-black dark:text-white" >
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50 lg:mx-10 lg:bg-white bg-stone-50 lg:ml-20 dark:bg-black dark:text-white" >
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700" >Préparer votre peau !</h4>
                             <p class="text-sm text-justify uppercase font-nunito">Veuillez hydrater votre peau aussi souvent que possible (idéalement pendant les 3 jours précédant la séance). Utilisez de l'huile ou du beurre de coco, cela rendra votre peau plus douce et souple, ce qui facilitera le tatouage et garantira un résultat parfait !</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100  lg:mx-10 lg:bg-white bg-stone-100  dark:bg-black dark:text-white">
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50  lg:mx-10 lg:bg-white bg-stone-50  dark:bg-black dark:text-white">
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700">Ne pas épiler la zone du tatouage</h4>
                             <p class="text-sm text-justify uppercase font-nunito">Mais vous pouvez raser la zone sur votre peau ~ 1 jour avant la séance.</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="hover:border-teal-700 border-4 border-stone-100 lg:mx-10 bg-stone-100  dark:bg-black dark:border-black dark:text-white">
+                    <SwiperSlide class="hover:border-teal-700 border-4 border-stone-100 lg:mx-10 bg-stone-50  dark:bg-black dark:border-black dark:text-white">
                         <div class="flex flex-col justify-center h-full p-6 saturate-0 mix-blend-darken dark:mix-blend-lighten">
                             <img data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);" src="/img/452941299_18099278131428157_2869167391769077256_n.jpg" class="mx-auto w-full" loading="lazy" />
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100  lg:mx-10 lg:bg-white bg-stone-100  dark:bg-black dark:text-white">
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50  lg:mx-10 lg:bg-white bg-stone-50  dark:bg-black dark:text-white">
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700">Mangez très bien avant la séance</h4>
                             <p class="text-sm text-justify uppercase font-nunito">Au moins 1 heure avant. Et s'il vous plaît, apportez également des collations, des chocolats et de l'eau, c'est très important !</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100  lg:mx-10 lg:bg-white bg-stone-100  dark:bg-black dark:text-white">
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50  lg:mx-10 lg:bg-white bg-stone-50  dark:bg-black dark:text-white">
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700">Portez des vêtements adaptés</h4>
                             <p class="text-sm text-justify uppercase font-nunito">Surtout si la zone de votre tatouage se situe sous votre poitrine, sur vos côtes, etc. Vous devez être préparé(e) à enlever vos vêtements et à mettre des stickers spéciaux pour vos tétons. Cela garantira votre confort ainsi que le mien.</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100  lg:mx-10 lg:bg-white bg-stone-100  dark:bg-black dark:text-white">
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50  lg:mx-10 lg:bg-white bg-stone-50  dark:bg-black dark:text-white">
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700">Ne portez pas de sous-vêtements ni de vêtements serrés</h4>
                             <p class="text-sm text-justify uppercase font-nunito">Pour éviter les traces à l’endroit où nous allons réaliser le tatouage. Il sera plus confortable pour nous deux si vous venez avec des sous-vêtements et des vêtements amples et doux.</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100  lg:mx-10 lg:bg-white bg-stone-100  dark:bg-black dark:text-white">
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50  lg:mx-10 lg:bg-white bg-stone-50  dark:bg-black dark:text-white">
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700">Ne consommez pas d’alcool au moins 1 jour avant la séance ( et après )</h4>
                             <p class="text-sm text-justify uppercase font-nunito">Il est très important pour moi que votre corps ne soit pas intoxiqué et que vous vous sentiez frais et en bonne forme.</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100  lg:mx-10 lg:bg-white bg-stone-100  dark:bg-black dark:text-white">
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50  lg:mx-10 lg:bg-white bg-stone-50  dark:bg-black dark:text-white">
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700">Essayez de ne pas passer trop de temps au soleil</h4>
                             <p class="text-sm text-justify uppercase font-nunito">Avant notre séance, veuillez éviter les coups de soleil, car une peau irritée peut compliquer le travail. Il est en effet difficile de tatouer sur une peau irritée et sèche.</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 border-stone-100  lg:mx-10 lg:bg-white bg-stone-100  dark:bg-black dark:text-white">
+                    <SwiperSlide class="group hover:border-teal-700 border-4 lg:border-stone-300 dark:border-black border-stone-50  lg:mx-10 lg:bg-white bg-stone-50  dark:bg-black dark:text-white">
                         <div class="flex flex-col justify-between h-full p-6">
                             <h4 class="font-antonsc text-4xl uppercase group-hover:text-teal-700">Ne prenez aucun analgésique !</h4>
                             <p class="text-sm text-justify uppercase font-nunito">ne vous inquiétez pas si c'est votre premier tatouage, ce n'est pas aussi douloureux que vous pourriez le penser. La peur ne nous aidera pas à réaliser le tatouage de la meilleure qualité et le plus agréable possible.</p>

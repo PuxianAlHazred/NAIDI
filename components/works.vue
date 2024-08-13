@@ -134,7 +134,7 @@
             </section>
 
             <a class="gridText3 grid grid-cols-12 gap-y-10 lg:my-40 lg:mb-40 mb-10 mx-auto" href="https://www.instagram.com/naidi.tattoo/" target="_blank">
-                <h5 class="text-stone-300 font-antonsc lg:text-[12vw] text-6xl text-center dark:text-black flex flex-col col-span-12 uppercase tracking-widest">
+                <h5 class="text-stone-300 font-antonsc lg:text-[12vw] text-6xl text-center dark:text-teal-700 flex flex-col col-span-12 uppercase tracking-widest">
                     INSTAGRAM
                 </h5>
                 <h6 class="hover:underline lg:-mt-40 -mt-10 font-mrdafoe lg:text-8xl text-4xl text-center text-black flex flex-col col-span-12  dark:text-white">Voir plus de créations</h6>
