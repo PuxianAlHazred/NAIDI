@@ -7,6 +7,7 @@
 
   const title = 'Naïdi.tattoo'
   const description = "Tatoueuse sur Toulouse et passionnée par l'art du tatouage depuis des années, je mets mon expertise et ma créativité au service de vos envies !"
+  const zeroPad = (num : any, places: any) => String(num).padStart(places, '0')
 
 
   useHead({
@@ -34,6 +35,20 @@
   })
   
   onMounted(() => { 
+
+    $gsap.from(".number", {
+      innerText: 0,
+      delay: 5,
+      duration: 2,
+      ease: "none",
+
+      modifiers: {
+        innerText: function (num : any) {
+          num = Math.round(num)
+          return zeroPad(num, 3)
+        }
+      }
+    });
     if(isDesktop) {
       $gsap.to('.gsap-loading', { borderWidth: 0, duration: 3 })
       $gsap.to('.gsap-blur', { 'webkitFilter': 'blur(0px)', duration: 3 })
@@ -101,7 +116,6 @@
         </template>
       </NuxtRouteAnnouncer>
 
-      <NuxtLoadingIndicator :color="'black'" :height="100" :duration="10000" />
 
       <section id="loading" class="overflow-hidden opacity-1 z-[50]">
           <div class="absolute w-full h-screen grid items-center justify-center z-[0] dark:invert">
@@ -113,10 +127,10 @@
           <div class="gsap-loading w-full h-screen bg-transparent border-white dark:border-black border-[50px] lg:border-[100px] p-[50px] lg:p-[100px] grid grid-cols-1 lg:grid-cols-12 items-center z-[10] select-none" 
           >
               <span 
-                class="lg:pt-0 pt-10 opacity-0 gsap-opacity col-span-3 font-nunito text-left flex flex-col mt-[100%] overflow-y-hidden text-black dark:text-white"
+                class="text-sm lg:pt-0 pt-10 opacity-0 gsap-opacity col-span-3 font-nunito text-left flex flex-col mt-[100%] overflow-y-hidden text-black dark:text-white"
               >
                 <b>LOADING</b> 
-                100%
+                <p class="flex"><span class="number">100</span>%</p>
               </span>
               <div 
                 class="gsap-border bg-white/20 dark:bg-black/20 backdrop-blur  col-span-6 border-0 border-stone-300 py-20 dark:border-white flex flex-col" 
@@ -137,7 +151,7 @@
                   </span>
               </div>
               <span 
-                class="opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase text-black dark:text-white"
+                class="text-sm opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase text-black dark:text-white"
               >
                 <b>TATTOO ARTISTE</b> basée sur Toulouse
               </span>
@@ -156,7 +170,7 @@
             </svg> 
         </div>
         <div class="z-[-2] fixed top-0 bg-white dark:bg-black h-screen w-screen ">
-          <div class="bg-[url('/noise.gif')] h-full w-full opacity-1 opacity-[0.10] dark:opacity-[0.20]" />
+          <div class="bg-[url('/noise.gif')] h-full w-full opacity-1 opacity-[0.10] dark:opacity-[0.30]" />
 
         </div>
         <svg class="svg-filter bg-black">

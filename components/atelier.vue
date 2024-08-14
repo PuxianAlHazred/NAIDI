@@ -41,8 +41,8 @@
     <section id="atelier" class="h-full w-full bg-transparent">
         <div id="atelierContent"  class="lg:p-20 p-10">
             <div class="grid grid-cols-12 items-center lg:py-0 py-10">
-                <div class="lg:col-span-11 col-span-8  h-1 bg-black dark:bg-white pixelateMin" />
-                <p class="lg:col-span-1 col-span-4 font-nunito text-black text-sm text-right dark:text-white">ATELIER</p>
+                <div class="lg:col-span-11 col-span-7  h-1 bg-black dark:bg-white pixelateMin" />
+                <p class="lg:col-span-1 col-span-5 font-nunito text-black text-sm text-right dark:text-white">ATELIER</p>
             </div>
             <div class="grid grid-cols-1 gap-y-10 lg:pb-40 overflow-hidden">
                 <h3 class="colTitreAtelier font-antonsc">Atelier <span>privée</span></h3>
@@ -96,15 +96,15 @@
                         />  
                     </div>
                     <div class="lg:mt-0 mt-4 font-nunito text-justify text-black dark:text-white text-sm ">
-                        <p class="uppercase ont-bold ">Je travaille dans un magnifique atelier privée et confortable proche de toulouse, je fais également des séjours invités dans des conventions.</p>
+                        <p class="uppercase">Je travaille dans un magnifique atelier privée et confortable proche de toulouse, je fais également des séjours invités dans des conventions.</p>
                         <div class="flex justify-between py-10">
                             <div class="flex flex-col text-left">
                                 <p class="font-bold underline uppercase">Adresse de l'atelier</p>
-                                <a class=" font-mrdafoe text-3xl text-teal-700">s'y rendre</a>
+                                <a class=" font-mrdafoe text-2xl text-teal-700 dark:text-stone-300">s'y rendre</a>
                             </div>
                             <div class="flex flex-col text-right ">
                                 <p class="font-bold underline uppercase">Prochaines conv.</p>
-                                <a class="font-mrdafoe text-3xl text-teal-700">en savoir plus</a>
+                                <a class="font-mrdafoe text-2xl text-teal-700 dark:text-stone-300">aucune</a>
                             </div>
                         </div>
                         <p class="uppercase lg:mb-0 mb-10">Découvrez l'intégralité de mon travail et restez informé(e) de mes actualités en me suivant sur Instagram.</p>
@@ -117,7 +117,7 @@
 </template>
 
 <style scoped lang="postcss">
-.colTitreAtelier { @apply text-stone-300 dark:text-teal-700 lg:text-[15vw] text-6xl text-center uppercase flex justify-between;}
-.colSTitreAtelier { @apply lg:-mt-10 lg:text-8xl text-6xl lg:mb-0 mb-10 text-center text-black dark:text-white ;}
+.colTitreAtelier { @apply text-stone-300 dark:text-teal-700 lg:text-[15vw] text-4xl text-center uppercase flex justify-between;}
+.colSTitreAtelier { @apply lg:-mt-10 lg:text-8xl text-4xl lg:mb-0 mb-10 text-center text-black dark:text-white ;}
 
 </style>

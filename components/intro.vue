@@ -43,20 +43,21 @@
     onMounted(() => { 
         $gsap.registerPlugin($scrollTo)
         $gsap.registerPlugin($ScrollTrigger)
-        
+        setTimeout(() => {
+            scrollTo('#intro')
+        }, 7000);
         if(isDesktop) { 
             console.log(isDesktop)
             $gsap.to(".colImage", { scrollTrigger: optionIntro, opacity: 0 })
             $gsap.to(".colTitre", { scrollTrigger: optionIntro, y: 50, color:"#000" })
             $gsap.to(".colCTA", { scrollTrigger: optionIntro, y: 350 })
-            $gsap.to("#navigation", { scrollTrigger: optionIntro, opacity: 1 }) 
+            $gsap.to("#navigation", { scrollTrigger: optionIntro, opacity: 1,  duration: 1, delay: 9  }) 
         }
         if(isTablet) {
         }
         if(isMobile) {
             console.log(isMobile)
-
-            $gsap.to("#navigation", { scrollTrigger: optionIntro, opacity: 1 }) 
+            $gsap.to("#navigation", { opacity: 1,  duration: 1, delay: 9 }) 
         }
 
         if(colorMode.value === 'light') {
@@ -90,15 +91,15 @@
 
 <template>
     <section>
-        <header id="intro" class="h-screen w-full bg-transparent">
+        <header id="intro" class="h-full w-full bg-transparent">
             <div id="introContent" class="grid grid-cols-1 lg:grid-cols-12 lg:p-20 p-10 h-full z-[10]">
                 <div class="colTitre col-span-2 flex flex-col justify-center items-center lg:justify-end lg:text-white lg:dark:text-black text-black dark:text-white lg:py-0 py-40">
-                    <h1 class="absolute font-antonsc lg:text-[16vw] lg:leading-[15vw] text-center pixelateMin text-[43vw]">NAÏDI</h1>
+                    <h1 class="absolute font-antonsc lg:text-[16vw] lg:leading-[15vw] text-center pixelateMin text-[43vw] mt-20 lg:mt-0">NAÏDI</h1>
                 </div>
                 <div class="colCTA col-span-8 flex flex-col justify-center lg:-mt-40 lg:-mr-20 text-black dark:text-white">
                     <div class="flex flex-col lg:p-20 pb-0 w-full font-nunito ">
                         <p class="lg:text-center text-justify uppercase text-sm">Passionnée par l'art du <b>tatouage</b> depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
-                        <a class="mx-auto mt-6 border-4 border-stone-300  text-4xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe hover:bg-stone-300 w-full text-center">Prendre contact</a>
+                        <a class="mx-auto mt-6 border-4 border-stone-300  text-3xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe hover:bg-stone-300 w-full text-center">Prendre contact</a>
                     </div>
                 </div>
                 <div class="col-span-2 flex flex-col justify-between z-[10] text-black dark:text-white">
@@ -144,7 +145,7 @@
                             <NuxtImg src="logo-black.png" width="50px" height="130px" class="dark:invert"  />
                         </div>
                     </div>
-                    <span class="col-span-1 font-nunito lg:text-right text-center flex flex-col uppercase lg:mb-0 mb-10"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
+                    <span class="text-sm col-span-1 font-nunito lg:text-right text-center flex flex-col uppercase lg:mb-0 mb-10"><b>TATTOO ARTISTE</b> basée sur Toulouse</span>
                 </div>
             </div>
             <div class="colImage absolute w-full h-screen z-[-1] dark:invert lg:opacity-100 opacity-0 lg:block hidden">
@@ -152,11 +153,11 @@
             </div>
         </header>
         <nav id="navigation" 
-            class="lg:mix-blend-difference mix-blend-none h-20 w-screen border-b-2 border-black dark:border-black text-black  font-nunito lg:px-20 px-0  text-sm z-[50] opacity-1 lg:opacity-0 fixed top-0 bg-background/100 backdrop-blur flex flex-col"
+            class="opacity-0 lg:mix-blend-difference mix-blend-none h-20 w-screen border-b-2 border-black dark:border-black text-black  font-nunito lg:px-20 px-0  text-sm z-[40] opacity-1 lg:opacity-0 fixed top-0 bg-white/50 dark:bg-black/50 backdrop-blur flex flex-col"
             :class="{ 'items-center justify-center': !menu, 'items-center pt-6': menu }"
         >
             <div class="lg:px-0 px-10 flex justify-between w-full" :class="{ 'items-center': !menu, 'items-end': menu }">
-                <h6 @click="scrollTo('#intro')" class="lg:w-full w-[200px] font-mrdafoe lg:text-[3vw] text-4xl text-left text-black dark:text-white">
+                <h6 @click="scrollTo('#intro')" class="lg:w-full w-[200px] font-mrdafoe lg:text-[3vw] text-3xl text-left text-black dark:text-white">
                     naïdi
                     <span class="lg:hidden text-teal-700">tattoo</span>
                 </h6>
@@ -218,9 +219,10 @@
                     </svg>
                 </div>
             </div>
+
             <div v-if="menu" class="lg:px-0 px-10 flex lg:justify-end lg:items-start h-full justify-center items-center w-full">
-                <div class="flex justify-center items-center bg-white/80 dark:bg-black/80 bg-backdrop border-stone-300 dark:border-black border-4 py-3 px-3 w-full">
-                    <nav class="lg:text-sm text-lg font-nunito text-center pr-3 flex flex-col uppercase h-[200px] lg:h-[130px] justify-between text-black dark:text-white">
+                <div class="flex justify-center items-center  py-3 px-3 w-full">
+                    <nav class="lg:text-sm text-sm font-nunito text-center pr-3 flex flex-col uppercase h-auto leading-6 lg:h-[130px] justify-between text-black dark:text-white">
                         <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
                             :to="{ hash: '#intro'}" 
                             class="hover:underline hover:font-bold uppercase" 
@@ -260,9 +262,8 @@
                 </div>
             </div>
             <div v-if="menu" class=" px-10 pb-10 w-full flex">
-                <a  class="w-full text-center border-4 border-teal-700 text-4xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe hover:bg-stone-300  text-white bg-black">Prendre contact</a>
+                <a  class="w-full text-center border-4 border-stone-300 dark:border-teal-700 text-2xl text-black dark:text-white py-3 px-6 animate-pulse font-antonsc hover:bg-stone-100 bg-white/80 dark:bg-black/80 bg-backdrop">prendre contact</a>
             </div>
         </nav>
-
     </section>
 </template>

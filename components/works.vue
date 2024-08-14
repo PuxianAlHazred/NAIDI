@@ -49,8 +49,8 @@
     <section id="works" class="h-full w-full bg-transparent z-[10]">
         <div id="worksContent" class="lg:p-20 p-10">
             <div class="grid grid-cols-12 items-center lg:my-0 my-10">
-                <div class="lg:col-span-11 col-span-8 h-1 bg-black dark:bg-white pixelateMin" />
-                <p class="lg:col-span-1 col-span-4 font-nunito text-black dark:text-white text-right text-sm">PORTFOLIO</p>
+                <div class="lg:col-span-11 col-span-7 h-1 bg-black dark:bg-white pixelateMin" />
+                <p class="lg:col-span-1 col-span-5 font-nunito text-black dark:text-white text-right text-sm">PORTFOLIO</p>
             </div>
 
             <section class="worksGrid1 grid grid-cols-11 lg:mb-0 mb-20 lg:gap-10 gap-y-10">
@@ -66,8 +66,8 @@
             </section>
 
             <div class="gridText1 grid grid-cols-12 gap-y-6 lg:my-0 my-6">
-                <h3 class="text-stone-300 dark:text-teal-700 font-antonsc text-[12vw] text-center text-black flex  col-span-12 uppercase justify-between">VIBRONS <span>ENSEMBLE</span></h3>
-                <h3 class="lg:-mt-40 -mt-10 font-mrdafoe lg:text-8xl text-4xl lg:text-right text-center text-black flex flex-col col-span-12 text-black dark:text-white">grâce au tatouage !</h3>
+                <h3 class="text-stone-300 dark:text-teal-700 font-antonsc text-[10vw] lg:text-[12vw] text-center text-black flex  col-span-12 uppercase justify-between">VIBRONS <span>ENSEMBLE</span></h3>
+                <h3 class="lg:-mt-40 -mt-10 font-mrdafoe lg:text-8xl text-3xl lg:text-right text-center text-black flex flex-col col-span-12 text-black dark:text-white">grâce au tatouage !</h3>
             </div>
 
             <section class="lg:block hidden  worksGrid2 grid grid-cols-11 lg:my-0 mt-20 lg:gap-10 gap-y-10">
@@ -134,10 +134,10 @@
             </section>
 
             <a class="gridText3 grid grid-cols-12 gap-y-10 lg:my-40 lg:mb-40 mb-10 mx-auto" href="https://www.instagram.com/naidi.tattoo/" target="_blank">
-                <h5 class="text-stone-300 font-antonsc lg:text-[12vw] text-6xl text-center dark:text-teal-700 flex flex-col col-span-12 uppercase tracking-widest">
+                <h5 class="text-stone-300 font-antonsc lg:text-[12vw] text-4xl text-center dark:text-teal-700 flex flex-col col-span-12 uppercase tracking-widest">
                     INSTAGRAM
                 </h5>
-                <h6 class="hover:underline lg:-mt-40 -mt-10 font-mrdafoe lg:text-8xl text-4xl text-center text-black flex flex-col col-span-12  dark:text-white">Voir plus de créations</h6>
+                <h6 class="hover:underline lg:-mt-40 -mt-10 font-mrdafoe lg:text-8xl text-3xl text-center text-black flex flex-col col-span-12  dark:text-white">Voir plus de créations</h6>
             </a>
         </div>
     </section>

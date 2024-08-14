@@ -87,8 +87,8 @@
     <section id="aboutus" class="h-full w-full bg-white dark:bg-black overflow-hidden">
         <div id="aboutusContent" class="lg:p-20 p-10">
             <div class="grid grid-cols-12 items-center lg:pt-0 pt-10">
-                <p class="lg:col-span-1 col-span-4 font-nunito text-black text-sm dark:text-white ">QUI SUIS-JE ?</p>
-                <div class="lg:col-span-11 col-span-8 h-1 bg-black pixelateMin dark:bg-white " />
+                <p class="lg:col-span-1 col-span-5 font-nunito text-black text-sm dark:text-white ">QUI SUIS-JE ?</p>
+                <div class="lg:col-span-11 col-span-7 h-1 bg-black pixelateMin dark:bg-white " />
             </div>
             <div class="colPhoto grid grid-cols-12 lg:p-40 p-0 z-[5] lg:mt-40 mt-10">
                 <div class="colPhotoC lg:absolute w-full h-full col-span-12  dark:invert ">
