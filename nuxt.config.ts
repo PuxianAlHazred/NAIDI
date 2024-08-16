@@ -76,7 +76,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     // Options @nuxtjs/tailwindcss
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: "first" }],
-    configPath: '/tailwind.config',
+    configPath: '/tailwind.config.js',
     exposeConfig: {
       level: 2
     },

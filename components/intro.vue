@@ -58,6 +58,8 @@
         if(isMobile) {
             console.log(isMobile)
             $gsap.to("#navigation", { opacity: 1,  duration: 1, delay: 9 }) 
+            $gsap.to("#navigation a span", { opacity: 1,  duration: 1, delay: 1 }) 
+
         }
 
         if(colorMode.value === 'light') {
@@ -91,15 +93,67 @@
 
 <template>
     <section>
-        <header id="intro" class="h-full w-full bg-transparent">
-            <div id="introContent" class="grid grid-cols-1 lg:grid-cols-12 lg:p-20 p-10 h-full z-[10]">
-                <div class="colTitre col-span-2 flex flex-col justify-center items-center lg:justify-end lg:text-white lg:dark:text-black text-black dark:text-white lg:py-0 py-40">
-                    <h1 class="absolute font-antonsc lg:text-[16vw] lg:leading-[15vw] text-center pixelateMin text-[43vw] mt-20 lg:mt-0">NAÏDI</h1>
+        <header id="intro" 
+            class="h-full w-full bg-transparent"
+        >
+            <div id="introContent" 
+                class="
+                    grid h-full z-[10]
+                       grid-cols-1     p-10 
+                    lg:grid-cols-12 lg:p-20 lg:h-screen
+                "
+            >
+                <div 
+                    class="
+                        text-black dark:text-white
+                        colTitre col-span-2 flex flex-col items-center 
+                           justify-center py-40
+                        md:justify-center md:py-40 md:text-black md:dark:text-white 
+                        lg:justify-end lg:py-0 lg:text-white lg:dark:text-black lg:items-start
+                    "
+                >
+                    <h1 
+                        class="
+                            absolute font-antonsc text-center pixelateMin
+                               text-[43vw] leading-[42vw] mt-20 
+                            md:text-[23vw] md:leading-[23vw] md:mt-20
+                            lg:text-[16vw] lg:leading-[15vw] lg:mt-0
+                        "
+                    >
+                        NAÏDI
+                    </h1>
                 </div>
-                <div class="colCTA col-span-8 flex flex-col justify-center lg:-mt-40 lg:-mr-20 text-black dark:text-white">
-                    <div class="flex flex-col lg:p-20 pb-0 w-full font-nunito ">
-                        <p class="lg:text-center text-justify uppercase text-sm">Passionnée par l'art du <b>tatouage</b> depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
-                        <a class="mx-auto mt-6 border-4 border-stone-300  text-3xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe hover:bg-stone-300 w-full text-center">Prendre contact</a>
+                <div 
+                    class="
+                        text-black dark:text-white
+                        colCTA col-span-8 flex flex-col justify-center
+                        lg:-mt-40 lg:-mr-20 
+                    "
+                >
+                    <div 
+                        class="
+                            flex flex-col pb-0 w-full font-nunito 
+                            lg:p-20
+                        "
+                    >
+                        <p 
+                            class="
+                                text-justify uppercase text-sm
+                                md:px-20 md:text-center 
+                                lg:px-0 lg:text-center 
+                            "
+                        >
+                            Passionnée par l'art du <b>tatouage</b> depuis des années, je mets mon expertise et ma créativité au service de vos envies !
+                        </p>
+                        <a class="
+                                text-black dark:text-white 
+                                hover:bg-stone-300 
+                                mx-auto mt-6 border-4 border-stone-300 text-3xl py-3 px-6 animate-pulse font-mrdafoe w-full text-center
+                                md:w-[300px]
+                            "
+                        >
+                            Prendre contact
+                        </a>
                     </div>
                 </div>
                 <div class="col-span-2 flex flex-col justify-between z-[10] text-black dark:text-white">
@@ -152,64 +206,105 @@
                 <NuxtImg src="test-1.png" class="ml-auto noise -mt-[100vh] mr-40" height="800" data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" style="transform-style: preserve-3d; transform: perspective(1000px);"/>
             </div>
         </header>
-        <nav id="navigation" 
-            class="opacity-0 lg:mix-blend-difference mix-blend-none h-20 w-screen border-b-2 border-black dark:border-black text-black  font-nunito lg:px-20 px-0  text-sm z-[40] opacity-1 lg:opacity-0 fixed top-0 bg-white/50 dark:bg-black/50 backdrop-blur flex flex-col"
-            :class="{ 'items-center justify-center': !menu, 'items-center pt-6': menu }"
+        <nav 
+            id="navigation" 
+            class="
+                border-black dark:border-black text-black bg-white/50 dark:bg-black/50
+                h-20 w-full font-nunito fixed top-0 backdrop-blur flex flex-col z-[40]  
+                   mix-blend-none    px-0     opacity-1    border-b      text-sm
+                md:mix-blend-none md:px-10 md:opacity-0 md:border-b   md:text-md
+                lg:mix-blend-none lg:px-20 lg:opacity-0 lg:border-b-2 lg:text-md
+            "
+            :class="{ 
+                'items-center justify-center': !menu, 
+                'items-center pt-6': menu 
+            }"
         >
-            <div class="lg:px-0 px-10 flex justify-between w-full" :class="{ 'items-center': !menu, 'items-end': menu }">
-                <h6 @click="scrollTo('#intro')" class="lg:w-full w-[200px] font-mrdafoe lg:text-[3vw] text-3xl text-left text-black dark:text-white">
-                    naïdi
-                    <span class="lg:hidden text-teal-700">tattoo</span>
+            <div 
+                class="
+                    flex justify-between w-full
+                       px-10 
+                    md:px-0 
+                    lg:px-0 
+                " 
+                :class="{ 
+                    'items-center': !menu, 
+                    'items-end': menu 
+                }"
+            >
+                <h6 
+                    @click="scrollTo('#intro')" 
+                    class="
+                        text-black dark:text-white
+                        font-mrdafoe text-left  flex
+                        w-[200px] text-3xl
+                        md:w-[200px] text-3xl
+                        lg:w-[300px] lg:text-[3vw]
+                    "
+                >
+                    naïdi<span class="lg:hidden md:hidden block text-teal-700">tattoo</span>
                 </h6>
-                <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
-                    :to="{ hash: '#intro'}" 
-                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
-                    @click="scrollTo('#intro')"
-                >
-                    Accueil
-                </NuxtLink>
-                <NuxtLink :class="{ 'font-bold underline': test === '#aboutus' }" 
-                    :to="{ hash: '#aboutus'}"     
-                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
-                    @click="scrollTo('#aboutus')"
-                >
-                    Qui suis-je ?
-                </NuxtLink>
-                <NuxtLink :class="{ 'font-bold underline': test === '#works' }" 
-                    :to="{ hash: '#works'}"     
-                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
-                    @click="scrollTo('#works')"
-                >
-                    Portfolio
-                </NuxtLink>
-                <NuxtLink :class="{ 'font-bold underline': test === '#health' }" 
-                    :to="{ hash: '#health'}"         
-                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
-                    @click="scrollTo('#health')"
-                >
-                    Les Soins
-                </NuxtLink>
-                <NuxtLink :class="{ 'font-bold underline': test === '#atelier' }" 
-                    :to="{ hash: '#atelier'}"         
-                    class="lg:block hidden hover:underline hover:font-bold uppercase" 
-                    @click="scrollTo('#atelier')"
-                >
-                    Atelier
-                </NuxtLink>
-                <a class="lg:block hidden font-nunito font-bold text-sm" 
-                    href="#"
-                >
-                    CONTACT
-                </a>
-                <div @click="menu = !menu, switchG()" class="">
-                    <svg v-if="!menu" width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden block stroke-black dark:stroke-white">
+                <span>
+                    <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
+                        :to="{ hash: '#intro'}" 
+                        class="lg:block md:block hidden hover:underline hover:font-bold uppercase" 
+                        @click="scrollTo('#intro')"
+                    >
+                        Accueil
+                    </NuxtLink>
+                </span>
+                <span>
+                    <NuxtLink :class="{ 'font-bold underline': test === '#aboutus' }" 
+                        :to="{ hash: '#aboutus'}"     
+                        class="lg:block md:block hidden hover:underline hover:font-bold uppercase" 
+                        @click="scrollTo('#aboutus')"
+                    >
+                        Qui suis-je ?
+                    </NuxtLink>
+                </span>
+                <span>
+                    <NuxtLink :class="{ 'font-bold underline': test === '#works' }" 
+                        :to="{ hash: '#works'}"     
+                        class="lg:block md:block hidden hover:underline hover:font-bold uppercase" 
+                        @click="scrollTo('#works')"
+                    >
+                        Portfolio
+                    </NuxtLink>
+                </span>
+                <span>
+                    <NuxtLink :class="{ 'font-bold underline': test === '#health' }" 
+                        :to="{ hash: '#health'}"         
+                        class="lg:block md:block hidden hover:underline hover:font-bold uppercase" 
+                        @click="scrollTo('#health')"
+                    >
+                        Les Soins
+                    </NuxtLink>
+                </span>
+                <span>
+                    <NuxtLink :class="{ 'font-bold underline': test === '#atelier' }" 
+                        :to="{ hash: '#atelier'}"         
+                        class="lg:block md:block hidden hover:underline hover:font-bold uppercase" 
+                        @click="scrollTo('#atelier')"
+                    >
+                        Atelier
+                    </NuxtLink>
+                </span>
+                <span>
+                    <a class="lg:block md:block hidden font-nunito font-bold text-sm" 
+                        href="#"
+                    >
+                        CONTACT
+                    </a>
+                </span>
+                <div @click="menu = !menu, switchG()" class="lg:hidden md:hidden block ">
+                    <svg v-if="!menu" width="33px" height="33px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-black dark:stroke-white">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier"> 
                             <path d="M5 8H13.75M5 12H19M10.25 16L19 16" stroke="currentStroke" stroke-linecap="round" stroke-linejoin="round"></path> 
                         </g>
                     </svg>
-                    <svg v-if="menu" width="33px" height="33px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden block stroke-black dark:stroke-white">
+                    <svg v-if="menu" width="33px" height="33px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-black dark:stroke-white">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier"> 
@@ -220,48 +315,48 @@
                 </div>
             </div>
 
-            <div v-if="menu" class="lg:px-0 px-10 flex lg:justify-end lg:items-start h-full justify-center items-center w-full">
+            <div v-if="menu" class="px-10 flex h-full justify-center items-center w-full">
                 <div class="flex justify-center items-center  py-3 px-3 w-full">
-                    <nav class="lg:text-sm text-sm font-nunito text-center pr-3 flex flex-col uppercase h-auto leading-6 lg:h-[130px] justify-between text-black dark:text-white">
+                    <nav class="text-sm font-nunito text-center pr-3 flex flex-col uppercase h-auto leading-6 justify-between text-black dark:text-white">
                         <NuxtLink :class="{ 'font-bold underline': test === '#intro' }"
                             :to="{ hash: '#intro'}" 
                             class="hover:underline hover:font-bold uppercase" 
                             @click="scrollTo2('#intro')"
                         >
-                            Accueil
+                            <span>Accueil</span>
                         </NuxtLink>
                         <NuxtLink :class="{ 'font-bold underline': test === '#aboutus' }" 
                             :to="{ hash: '#aboutus'}"     
                             class="hover:underline hover:font-bold uppercase" 
                             @click="scrollTo2('#aboutus')"
                         >
-                            Qui suis-je ?
+                            <span>Qui suis-je ?</span>
                         </NuxtLink>
                         <NuxtLink :class="{ 'font-bold underline': test === '#works' }" 
                             :to="{ hash: '#works'}"     
                             class="hover:underline hover:font-bold uppercase" 
                             @click="scrollTo2('#works')"
                         >
-                            Portfolio
+                            <span>Portfolio</span>
                         </NuxtLink>
                         <NuxtLink :class="{ 'font-bold underline': test === '#health' }" 
                             :to="{ hash: '#health'}"         
                             class="hover:underline hover:font-bold uppercase" 
                             @click="scrollTo2('#health')"
                         >
-                            Les Soins
+                            <span>Les Soins</span>
                         </NuxtLink>
                         <NuxtLink :class="{ 'font-bold underline': test === '#atelier' }" 
                             :to="{ hash: '#atelier'}"         
                             class="hover:font-bold uppercase" 
                             @click="scrollTo2('#atelier')"
                         >
-                            Atelier
+                            <span>Atelier</span>
                         </NuxtLink>
                     </nav>
                 </div>
             </div>
-            <div v-if="menu" class=" px-10 pb-10 w-full flex">
+            <div v-if="menu" class="px-10 pb-10 w-full flex">
                 <a  class="w-full text-center border-4 border-stone-300 dark:border-teal-700 text-2xl text-black dark:text-white py-3 px-6 animate-pulse font-antonsc hover:bg-stone-100 bg-white/80 dark:bg-black/80 bg-backdrop">prendre contact</a>
             </div>
         </nav>

@@ -137,18 +137,18 @@
                 data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" 
                 style="transform-style: preserve-3d; transform: perspective(1000px);"
               >
-                  <h1 
+                <h1 
                   class="gsap-blur blur-[500px] font-antonsc text-[16vw] text-center text-black dark:text-white z-40]" 
                   style="transform: translateZ(200px)"
                 >
                   NAÏDI
                 </h1>
-                  <span 
-                    class="opacity-0 gsap-opacity mx-auto w-[600px] text-right text-sm font-nunito uppercase -mt-0 z-[50] text-black dark:text-white"
-                    style="transform: translateZ(150px)"
-                  >
-                    Bienvenue sur mon site
-                  </span>
+                <span 
+                  class="hidden md:block opacity-0 gsap-opacity mx-auto w-[600px] lg:text-right text-center text-sm font-nunito uppercase -mt-0 z-[50] text-black dark:text-white"
+                  style="transform: translateZ(150px)"
+                >
+                  Bienvenue sur mon site
+                </span>
               </div>
               <span 
                 class="text-sm opacity-0 gsap-opacity col-span-3 font-nunito text-right flex flex-col mt-[100%] uppercase text-black dark:text-white"

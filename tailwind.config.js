@@ -1,5 +1,14 @@
-export default {
-    theme: {},
+  /** @type {import('tailwindcss').Config} */
+  module.exports = {
+    theme: {
+      extend: {
+        screens: {
+          'xs': '320px',
+          'xs2': '375px',  
+          'xs3': '425px',
+        }
+      }
+    },
     plugins: [],
     content: [
       `${srcDir}/components/**/*.{vue,js,ts}`,

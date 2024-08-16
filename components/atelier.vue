@@ -44,11 +44,11 @@
                 <div class="lg:col-span-11 col-span-7  h-1 bg-black dark:bg-white pixelateMin" />
                 <p class="lg:col-span-1 col-span-5 font-nunito text-black text-sm text-right dark:text-white">ATELIER</p>
             </div>
-            <div class="grid grid-cols-1 gap-y-10 lg:pb-40 overflow-hidden">
+            <div class="grid grid-cols-1 gap-y-10 lg:pb-40">
                 <h3 class="colTitreAtelier font-antonsc">Atelier <span>privée</span></h3>
                 
                 <h3 class="colSTitreAtelier font-mrdafoe lg:hidden lg:mt-0 -mt-10">sur Toulouse</h3>
-                <div class="mx-auto lg:-mt-40 grid lg:grid-cols-3 grid-cols-1 lg:h-[80vh] justify-center items-center">
+                <div class="mx-auto lg:-mt-40 grid lg:grid-cols-3 grid-cols-1 lg:h-[80vh] justify-center items-center md:px-20">
                     <div class="flex justify-start w-full lg:pl-20">
                         <Swiper
                             class="swiper-cards lg:mb-0 mb-10 w-full"
@@ -76,7 +76,7 @@
                             </SwiperSlide>
                         </Swiper>
                     </div>
-                    <div class="flex justify-center lg:block hidden z-[5] lg:mb-0 my-10" 
+                    <div class="flex justify-center lg:block hidden z-[5] lg:mb-0 my-10 " 
                         data-tilt data-tilt-speed="300" data-tilt-perspective="1000" data-tilt-reverse="true" data-tilt-max="3" data-tilt-reset="false" 
                         style="transform-style: preserve-3d; transform: perspective(1000px);
                     ">
@@ -100,11 +100,11 @@
                         <div class="flex justify-between py-10">
                             <div class="flex flex-col text-left">
                                 <p class="font-bold underline uppercase">Adresse de l'atelier</p>
-                                <a class=" font-mrdafoe text-2xl text-teal-700 dark:text-stone-300">s'y rendre</a>
+                                <a class=" font-mrdafoe text-2xl md:text-4xl text-teal-700 dark:text-stone-300">s'y rendre</a>
                             </div>
                             <div class="flex flex-col text-right ">
                                 <p class="font-bold underline uppercase">Prochaines conv.</p>
-                                <a class="font-mrdafoe text-2xl text-teal-700 dark:text-stone-300">aucune</a>
+                                <a class="font-mrdafoe text-2xl md:text-4xl text-teal-700 dark:text-stone-300">aucune</a>
                             </div>
                         </div>
                         <p class="uppercase lg:mb-0 mb-10">Découvrez l'intégralité de mon travail et restez informé(e) de mes actualités en me suivant sur Instagram.</p>
@@ -117,7 +117,7 @@
 </template>
 
 <style scoped lang="postcss">
-.colTitreAtelier { @apply text-stone-300 dark:text-teal-700 lg:text-[15vw] text-4xl text-center uppercase flex justify-between;}
-.colSTitreAtelier { @apply lg:-mt-10 lg:text-8xl text-4xl lg:mb-0 mb-10 text-center text-black dark:text-white ;}
+.colTitreAtelier { @apply text-stone-300 dark:text-teal-700 lg:text-[15vw] md:text-[15vw] md:leading-[15vw] text-4xl text-center uppercase flex justify-between;}
+.colSTitreAtelier { @apply lg:-mt-10 md:-mt-20 lg:text-8xl md:text-7xl text-4xl lg:mb-0 mb-10 text-center text-black dark:text-white ;}
 
 </style>

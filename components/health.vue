@@ -1,15 +1,39 @@
 <template>
     <section id="health" class="h-full w-full bg-white dark:bg-black">
         <div id="healthContent" class="lg:p-20 p-0">
-            <div class="grid grid-cols-12 items-center lg:px-20 lg:pt-0 pt-20 lg:px-20 px-10">
-                <p class="lg:col-span-1 col-span-5 font-nunito text-teal-700 dark:text-white text-sm">LES SOINS</p>
-                <div class="lg:col-span-11 col-span-7  h-1 bg-teal-700 dark:bg-white pixelateMin" />
+            <div 
+                class="
+                    grid grid-cols-12 items-center
+                       pt-10    pb-0  px-10
+                    md:pt-10 md:pb-10 md:px-10
+                    lg:pt-0  lg:pb-0  lg:px-20
+                "
+            >
+                <p
+                    class="
+                        text-teal-700 dark:text-teal-700 
+                        font-nunito text-sm  text-left
+                           col-span-5 
+                        md:col-span-2 
+                        lg:col-span-1 
+                    "
+                >
+                    LES SOINS
+                </p>
+                <div 
+                    class="
+                        h-1 bg-teal-700 pixelateMin 
+                           col-span-7
+                        md:col-span-10 
+                        lg:col-span-11 
+                    " 
+                />
             </div>
             <div class="grid grid-cols-12 gap-y-6 overflow-hidden py-10  lg:px-20 px-10">
-                <h3 class="lg:animate-none animate-pulse lg:px-20 text-teal-700 font-antonsc lg:text-[9vw] text-2xl text-center flex  col-span-12 uppercase justify-between tracking-widest">Prenez <span class="underline text-black dark:text-white">soin</span> de vous</h3>
+                <h3 class="lg:animate-none animate-pulse lg:px-20 text-teal-700 font-antonsc lg:text-[9vw] md:text-[9vw] text-2xl text-center flex  col-span-12 uppercase justify-between tracking-widest">Prenez <span class="underline text-black dark:text-white">soin</span> de vous</h3>
                 <Swiper
                     class="swiper-cards w-full h-[500px] lg:mt-0 mt-6 lg:mb-0 mb-10"
-                    width="250"
+                    :width="250"
                     :modules="[SwiperAutoplay]"
                     :slides-per-view="1"
                     :scrollbar="{ draggable: true }"

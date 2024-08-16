@@ -1,10 +1,10 @@
 <template>
     <footer id="footer" class="bg-white dark:bg-black lg:h-screen h-full flex flex-col justify-end z-[10]">
-        <div class="flex flex-col pb-10 w-screen font-nunito z-[10] px-10 lg:px-20 lg:pt-0 pt-20">
-            <p class="text-justify lg:text-center uppercase dark:text-white text-sm">Passionnée par l'art du tatouage depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
-            <a class="lg:mx-auto mt-6 border-4 border-stone-300  text-3xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe text-center">Prendre contact</a>
+        <div class="md:px-20 flex flex-col pb-10 w-screen font-nunito z-[10] px-10 lg:px-20 lg:pt-0 pt-20">
+            <p class="text-justify md:text-center lg:text-center uppercase dark:text-white text-sm">Passionnée par l'art du tatouage depuis des années, je mets mon expertise et ma créativité au service de vos envies !</p>
+            <a class="lg:mx-auto md:mx-auto mt-6 border-4 border-stone-300  text-3xl text-black dark:text-white py-3 px-6 animate-pulse font-mrdafoe text-center md:w-[300px]">Prendre contact</a>
         </div>
-        <h6 class="font-antonsc lg:text-[16vw] text-4xl text-center text-black dark:text-white w-screen flex justify-between tracking-widest lg:px-20 lg:py-0 py-6 px-10">NAÏDI <span class="text-teal-700">TATTOO</span></h6>
+        <h6 class="font-antonsc lg:text-8xl md:text-8xl text-6xl text-center text-black dark:text-white w-screen flex justify-between tracking-widest lg:px-20 lg:py-0 py-6 px-10">NAÏDI <span class="text-teal-700">TATTOO</span></h6>
         <div class="grid grid-cols-12 items-center lg:px-20 px-10 border-t-0 border-stone-300 text-sm z-[10] text-black dark:text-white">
             <a class="lg:col-span-2 col-span-3  hover:underline font-nunito  font-bold uppercase" href="#">© 2024</a>
 
