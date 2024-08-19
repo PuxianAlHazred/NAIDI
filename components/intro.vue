@@ -140,7 +140,7 @@
                             class="
                                 text-justify uppercase text-sm
                                 md:px-20 md:text-center 
-                                lg:px-0 lg:text-center 
+                                lg:px-0 lg:text-center  lg:max-w-screen-sm lg:mx-auto
                             "
                         >
                             Passionnée par l'art du <b>tatouage</b> depuis des années, je mets mon expertise et ma créativité au service de vos envies !

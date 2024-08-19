@@ -76,11 +76,25 @@ export default defineNuxtConfig({
   tailwindcss: {
     // Options @nuxtjs/tailwindcss
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: "first" }],
-    configPath: '/tailwind.config.js',
+    configPath: './tailwind.config',
     exposeConfig: {
       level: 2
     },
-    config: {},
+    config: {
+      /* Extend the Tailwind config here */
+      theme: {
+        extend: {
+          screens: {
+            'xs': '320px',
+            'xs2': '375px',  
+            'xs3': '425px',
+          }
+        }
+      },
+      content: [
+        'content/**/**.md'
+      ]
+    },
     viewer: true,
     editorSupport: true
   },
